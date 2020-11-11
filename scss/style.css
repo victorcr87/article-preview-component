@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+* {
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+* h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  background-color: #ecf2f8;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr auto;
+      grid-template-rows: 1fr auto;
+  place-items: center;
+}
+
+article {
+  background: #fff;
+  width: 90%;
+  max-width: 700px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  border-radius: 10px;
+}
+
+article .image {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 40%;
+          flex: 0 1 40%;
+  background: url("../images/drawers.jpg");
+  background-size: cover;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+article .content {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 60%;
+          flex: 0 1 60%;
+  padding: 0 3em 0 3em;
+}
+
+.description {
+  margin-bottom: 2em;
+}
+
+.social-container {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-columns: auto 1fr auto;
+      grid-template-columns: auto 1fr auto;
+  padding-bottom: 2em;
+}
+
+.social-container p {
+  margin: 0;
+  line-height: 2em;
+}
+
+.avatar {
+  margin-right: 1em;
+  border-radius: 100%;
+  width: 50px;
+}
+
+.share-button {
+  border-radius: 100%;
+  width: 2.5em;
+  height: 2.5em;
+  border: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+.share-button:hover, .share-button:focus {
+  background: #48556a;
+}
+
+.share-button:hover .share-icon path, .share-button:focus .share-icon path {
+  fill: #fff;
+}
+
+.dark-text {
+  color: #48556a;
+  font-weight: 700;
+}
+
+.light-text {
+  color: #6d7f97;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+/*# sourceMappingURL=style.css.map */
