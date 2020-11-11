@@ -1,0 +1,28 @@
+* {
+  font-family: "Manrope", sans-serif;
+  font-size: $font-size;
+  font-weight: 500;
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+}
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+.dark-text {
+  color: $very-dark-grayish-blue;
+  font-weight: 700;
+}
+.light-text {
+  color: $desaturated-dark-blue;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
