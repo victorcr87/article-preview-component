@@ -1,20 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
-
-$very-dark-grayish-blue: hsl(217, 19%, 35%);
-$desaturated-dark-blue: hsl(214, 17%, 51%);
-$grayish-blue: hsl(212, 23%, 69%);
-$light-grayish-blue: hsl(210, 46%, 95%);
-$font-size: 13px;
-
-* {
-  font-family: "Manrope", sans-serif;
-  font-size: $font-size;
-  font-weight: 500;
-  h1 {
-    font-size: 1.5rem;
-    font-weight: 700;
-  }
-}
+@import "variables";
+@import "config";
 
 body {
   width: 100vw;
@@ -24,6 +9,8 @@ body {
   display: grid;
   grid-template-rows: 1fr auto;
   place-items: center;
+  @include mobile {
+  }
 }
 article {
   background: #fff;
@@ -33,16 +20,27 @@ article {
   flex-wrap: nowrap;
   flex-direction: row;
   border-radius: 10px;
+  position: relative;
   .image {
     flex: 0 1 40%;
     background: url("../images/drawers.jpg");
     background-size: cover;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+    @include mobile {
+      flex-basis: 15em;
+      border-bottom-left-radius: 0;
+      border-top-right-radius: 10px;
+    }
   }
   .content {
     flex: 0 1 60%;
     padding: 0 3em 0 3em;
+  }
+  @include mobile {
+    min-width: 315px;
+    max-width: 450px;
+    flex-direction: column;
   }
 }
 .description {
@@ -72,25 +70,59 @@ article {
   outline: none;
   &:hover,
   &:focus {
-    background: $very-dark-grayish-blue;
+    background: $desaturated-dark-blue;
     .share-icon {
       path {
         fill: #fff;
       }
     }
   }
+  @include mobile {
+    position: relative;
+    z-index: 2;
+  }
 }
-.dark-text {
-  color: $very-dark-grayish-blue;
-  font-weight: 700;
-}
-.light-text {
-  color: $desaturated-dark-blue;
-}
-.attribution {
-  font-size: 11px;
-  text-align: center;
-}
-.attribution a {
-  color: hsl(228, 45%, 44%);
+.callout {
+  color: $light-grayish-blue;
+  letter-spacing: 0.2em;
+  background: $very-dark-grayish-blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 100px;
+  right: -65px;
+  border-radius: 10px;
+  padding: 1em 2em;
+  &__header {
+    color: $grayish-blue;
+    @include mobile {
+      padding-left: 2em;
+    }
+  }
+  &__content {
+    margin: 1em;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 0;
+    border-top: 15px solid $very-dark-grayish-blue;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    @include mobile {
+      display: none;
+    }
+  }
+  @include mobile {
+    justify-content: left;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5em 0 2.3em 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
 }
